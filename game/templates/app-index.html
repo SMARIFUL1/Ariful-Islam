@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rock Paper Scissors</title>
+  <style>
+    body { text-align: center; font-family: Arial; margin-top: 50px; }
+    button { margin: 5px; padding: 10px 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>🪨 Rock Paper Scissors ✂️</h1>
+
+  <form method="POST">
+    <button name="choice" value="rock">Rock</button>
+    <button name="choice" value="paper">Paper</button>
+    <button name="choice" value="scissors">Scissors</button>
+  </form>
+
+  {% if result %}
+  <p><strong>You chose:</strong> {{ player }}</p>
+  <p><strong>Computer chose:</strong> {{ computer }}</p>
+  <h3>{{ result }}</h3>
+  {% endif %}
+</body>
+</html>
