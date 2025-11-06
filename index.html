@@ -1,108 +1,378 @@
 <!DOCTYPE HTML>
-
-<html>
-
+<html lang="en">
 <head>
-	<title>Ariful Islam</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+  <title>Ariful Islam | Data Enthusiast</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://kit.fontawesome.com/a2e0e6f2e2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
+    body {
+      background: #0b0b0c;
+      color: #f5f5f5;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    #header-wrapper {
+      background: rgba(10,10,10,0.9);
+      border-bottom: 2px solid #ff9800;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      padding-bottom: 1rem;
+    }
+
+    #nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+      gap: 0.5rem;
+    }
+
+    #nav ul li {
+      display: inline-block;
+    }
+
+    #nav ul li a {
+      color: #f5f5f5;
+      text-decoration: none;
+      padding: 6px 12px;
+      transition: color 0.3s ease, background 0.3s ease;
+      border-radius: 4px;
+    }
+
+    #nav ul li a:hover,
+    #nav ul li.current_page_item a {
+      background: #ff9800;
+      color: #0b0b0c;
+    }
+
+    /* Hero Section */
+    #intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 4rem 5%;
+      max-width: 1100px;
+      margin: 0 auto;
+      animation: fadeIn 2s ease-in;
+    }
+
+    #intro-text {
+      flex: 1 1 500px;
+    }
+
+    #intro-text h1 {
+      font-size: 2.8rem;
+      color: #ff9800;
+      margin-bottom: 0.5rem;
+    }
+
+    #intro-text h3 {
+      font-size: 1.4rem;
+      color: #90caf9;
+      min-height: 30px;
+    }
+
+    #intro-text p {
+      color: #ccc;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    #intro-text .contact {
+      margin-top: 2rem;
+    }
+
+    .contact p {
+      margin: 0.5rem 0;
+      color: #bdbdbd;
+    }
+
+    .contact a {
+      color: #ff9800;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .contact i {
+      color: #ff9800;
+      margin-right: 8px;
+    }
+
+    /* Profile Image */
+    #intro img {
+      width: 260px;
+      height: 300px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    #intro img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,165,0,0.6);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Social Icons */
+    .socials {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .socials a {
+      color: #ffa726;
+      font-size: 1.8rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+      transform: scale(1.2);
+    }
+
+    /* Skills Section */
+    .skills {
+      text-align: center;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+
+    .skills h2 {
+      color: #ff9800;
+      margin-bottom: 1rem;
+    }
+
+    .skills-logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .skills-logos img {
+      height: 60px;
+      width: auto;
+      transition: transform 0.3s ease;
+      filter: grayscale(40%);
+    }
+
+    .skills-logos img:hover {
+      transform: scale(1.1);
+      filter: grayscale(0%);
+    }
+
+    /* Marquee Button */
+    .marquee-wrapper {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .glow-button {
+      text-decoration: none;
+      font-size: 26px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(90deg, #ff9900, #00ccff, #cc33ff);
+      padding: 12px 24px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+      animation: glow 2s infinite alternate;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+      to { box-shadow: 0 0 30px rgba(255,255,255,0.7); }
+    }
+
+    @media (max-width: 768px) {
+      #intro {
+        flex-direction: column;
+        text-align: center;
+      }
+      .socials {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body class="homepage is-preload">
-	<div id="page-wrapper">
+  <div id="page-wrapper">
+    <!-- Header -->
+    <div id="header-wrapper">
+      <div class="container">
+        <header id="header">
+          <div class="inner">
+            <h1><a href="index.html" id="logo"></a></h1>
 
-		<!-- Header -->
-		<div id="header-wrapper">
-			<div class="container">
+            <nav id="nav">
+              <ul>
+                <li class="current_page_item"><a href="index.html">Home</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="Data-Analysis.html">Data Analysis</a></li>
+                <li><a href="machine-learning.html">Machine Learning</a></li>
+                <li><a href="Data-science.html">Data Science</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="visualization.html">Viz</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </div>
+    </div>
 
-				<!-- Header -->
-				<header id="header">
-					<div class="inner">
+    <!-- Intro Section -->
+    <section id="intro">
+      <div id="intro-text">
+        <h1>Hi, I'm Arif</h1>
+        <h3 class="typing"></h3>
+        <p>Data Enthusiast passionate about math, numbers, and discovering insights through data.<br>
+           Skilled in Python, SQL, Power BI, Databricks, Tableau, and Excel.</p>
+        <div class="contact">
+          <p><i class="fas fa-phone"></i> <a href="tel:+49015211486228">(+49) 015211486228</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:rehmanarip@ymail.com">rehmanarip@ymail.com</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Germany</p>
+        </div>
+        <div class="socials">
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://kaggle.com" target="_blank"><i class="fab fa-kaggle"></i></a>
 
-						<!-- Logo -->
-						<h1><a href="index.html" id="logo"></a></h1>
+        </div>
+      </div>
 
-						<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li class="current_page_item"><a href="index.html">Home</a></li>
-								<li>
-									<a href="about-me.html">About me</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li>
-											<a href="#">Phasellus consequat</a>
-											<ul>
-												<li><a href="#">Lorem ipsum dolor</a></li>
-												<li><a href="#">Phasellus consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
-									</ul>
-								</li>
-								<li><a href="Data-Analysis.html">Data Analysis</a></li>
-								<li><a href="machine-learning.html">Machine learning</a></li>
-								<li><a href="Data-science.html">Data science</a></li>
-								<li><a href="certificates.html">Certificates</a></li>
-								<li><a href="visualization.html">Visualization</a></li>
-							</ul>
-							<img src="images/Arif1.jpg" width="245px" height="270px" style="float:right ;margin:120px 200px">
-						</nav>
+      <img src="images/Arif1.jpg" alt="Arif's Profile Photo">
+    </section>
 
-					</div>
-				</header>
+    <!-- Marquee Button -->
+    <div class="marquee-wrapper">
+      <marquee behavior="alternate" scrollamount="6">
+        <a href="https://game-421m.onrender.com/" target="_blank" class="glow-button">🎮 Play Game!</a>
+      </marquee>
+    </div>
+  </div>
 
-				<!-- Banner -->
-				<div id="identifier">
-					<div>
-						<div>
-							<h2>
-								<marquee direction="right" behavior="alternate"
-             
-								<p align="center" style="color: rgb(218, 113, 52); margin:10px 0px">Warm Welcome</p>
-
-							</marquee>
-							</h2>
-							<h4 style="color: rgb(48, 150, 190); text-transform: none; margin: 70px 0 170px 390px" > Hi, This is Ariful Islam
-								<br />
-								"A Data Enthusiast"<a href="#"></a>
-								<br />
-								mobile : (+49) 015211486228
-								<br />
-								email : rehmanarip@ymail.com
-								<br/>
-								Country : Germany
-							</h4>
-
-						</div>
-					</div>
-    <marquee behavior="alternate" scrollamount="6">
-  <a href="https://app-python-1-vq4x.onrender.com" target="_blank"
-     style="
-       text-decoration: none;
-       font-size: 28px;
-       font-weight: bold;
-       color: #fff;
-       background: linear-gradient(90deg, #ff9900, #00ccff, #cc33ff);
-       padding: 12px 24px;
-       border-radius: 12px;
-       box-shadow: 0 0 15px rgba(255,255,255,0.5);
-       animation: glow 2s infinite alternate;
-       font-family: 'Comic Sans MS', cursive;
-     ">
-     🎮 Play Your Game!
-  </a>
-</marquee>
-
-
-				</div>
-			</div>
-
-
+  <script>
+    new Typed('.typing', {
+      strings: ['Data Analyst', 'Machine Learning Engineer', 'Data Enthusiast'],
+      typeSpeed: 70,
+      backSpeed: 50,
+      loop: true
+    });
+  </script>
 </body>
+<!-- Comment Section -->
+
+<section id="comments" style="padding:2rem; max-width:1100px; margin:2rem auto; background:#111; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.5); color:#fff;">
+  <h2 style="color:#ff9800; margin-bottom:1rem;">What do you want to share on my portfolio?</h2>
+
+  <form id="commentForm" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
+    <input type="text" id="name" placeholder="Name*" required style="flex:1 1 150px; padding:8px; border-radius:6px; border:none;">
+    <input type="email" id="email" placeholder="Email*" required style="flex:1 1 200px; padding:8px; border-radius:6px; border:none;">
+    <input type="text" id="comment" placeholder="Comment" required style="flex:2 1 300px; padding:8px; border-radius:6px; border:none;">
+    <button type="submit" style="padding:8px 16px; border:none; border-radius:6px; background:#ff9800; color:#111; cursor:pointer;">Submit</button>
+  </form>
+
+  <p id="thankMessage" style="color:#90caf9; margin-top:0.5rem;"></p>
+
+  <div id="commentsContainer" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:1rem;"></div>
+</section>
+
+<script>
+  const commentForm = document.getElementById('commentForm');
+  const commentsContainer = document.getElementById('commentsContainer');
+  const thankMessage = document.getElementById('thankMessage');
+
+  // Mask email
+  function maskEmail(email) {
+    const parts = email.split('@');
+    return '*****@' + parts[1];
+  }
+
+  // Load comments
+  function loadComments() {
+    const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+    commentsContainer.innerHTML = '';
+    comments.forEach(({ name, email, message }, index) => {
+      const div = document.createElement('div');
+      div.style.display = 'flex';
+      div.style.alignItems = 'center';
+      div.style.justifyContent = 'space-between';
+      div.style.background = '#222';
+      div.style.padding = '8px';
+      div.style.borderRadius = '6px';
+      div.style.flexWrap = 'wrap';
+
+      div.innerHTML = `
+        <div style="flex:1 1 150px; color:#fff;">${name}</div>
+        <div style="flex:1 1 200px; color:#90caf9;">${maskEmail(email)}</div>
+        <div style="flex:2 1 300px; color:#ccc;">${message}</div>
+        <button style="flex:0 0 auto; background:#ff5252; color:#fff; border:none; border-radius:6px; cursor:pointer; padding:4px 8px;">Delete</button>
+      `;
+
+      // Delete functionality with password check
+      div.querySelector('button').addEventListener('click', () => {
+        const password = prompt('Enter password to delete comment:');
+        if (password === 'ArLi166&73@') { // change this to your password
+          comments.splice(index, 1);
+          localStorage.setItem('comments', JSON.stringify(comments));
+          loadComments();
+        } else {
+          alert('Incorrect password. You cannot delete this comment.');
+        }
+      });
+
+      commentsContainer.appendChild(div);
+    });
+  }
+
+  loadComments();
+
+  // Form submission
+  commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('comment').value.trim();
+
+    // Validate email format
+    if (!/^[^@]+@[^@]+\.(com|de|io)$/.test(email)) {
+      alert('Email must be valid and end with .com, .de, or .io or .');
+      return;
+    }
+
+    const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+    comments.push({ name, email, message });
+    localStorage.setItem('comments', JSON.stringify(comments));
+
+    loadComments();
+    commentForm.reset();
+    thankMessage.textContent = 'Thanks for your comment!';
+    setTimeout(() => thankMessage.textContent = '', 3000);
+  });
+</script>
 
 </html>
